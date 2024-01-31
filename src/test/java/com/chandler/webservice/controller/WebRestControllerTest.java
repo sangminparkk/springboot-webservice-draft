@@ -1,5 +1,6 @@
 package com.chandler.webservice.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,7 +19,8 @@ class WebRestControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void 기본라우팅_확인() throws Exception {
+    @DisplayName("/start 호출시 라우팅 정상 동작 확인")
+    void test() throws Exception {
         mockMvc.perform(get("/start")
                         .contentType(APPLICATION_FORM_URLENCODED))
                 .andExpect(status().isOk())
